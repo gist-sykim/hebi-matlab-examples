@@ -14,7 +14,7 @@
 % Robot specific setup. Edit setupArm.m as needed for your configuration.
 [ group, kin, effortOffset, gravityVec ] = setupArm('workshop-6dof-with-gripper');
 gripper = HebiLookup.newGroupFromNames('Arm', 'Gripper');
-group.send('gains', HebiUtils.loadGains('6dof_repeat_gains'));
+group.send('gains', HebiUtils.loadGains('ex_6dof_gains_repeat'));
  
 % Trajectory
 trajGen = HebiTrajectoryGenerator(kin);

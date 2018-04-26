@@ -20,7 +20,7 @@ enableLogging = true;
 
 %% Record waypoints in gravity compensated mode
 disp('Add waypoint with ALT.  Exit teaching mode with ESC');
-group.send('gains', HebiUtils.loadGains('6dof_teach_gains'));
+group.send('gains', HebiUtils.loadGains('ex_6dof_gains_teach'));
 
 waypoints = [];
 keys = read(kb);
@@ -49,7 +49,7 @@ end
 
 %% Replay waypoints
 disp(['Replaying ' num2str(size(waypoints,1)) ' waypoints'])
-group.send('gains', HebiUtils.loadGains('6dof_repeat_gains'));
+group.send('gains', HebiUtils.loadGains('ex_6dof_gains_teach'));
 
 % Start background logging 
 if enableLogging
